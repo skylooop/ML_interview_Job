@@ -15,20 +15,28 @@ flags.DEFINE_string("saved_model", default="/home/m_bobrin/goznak/Task2Noise_Spe
 class Inference:
     def __init__(self, model: nn.Module, path_to_model: str, data: str):
         
-        self.model.load_state_dict(torch.load(path_to_model)).cuda()
+        self.model = model
+        self.model.load_state_dict(torch.load(path_to_model), strict=False)
+        self.model = self.model.cuda()
         self.model.eval()
         
         self.data = data
         
     def inference(self):
-        files = os.listdir(self.data)
-        
-        mel_specs = [torch.from_numpy(self._process(np.load(files[i]).T)[None, None, :, :]).cuda() for i in files]
+        files = sorted(os.listdir(self.data))
+        print(files)
+        mel_specs = [torch.from_numpy(self._process(np.load(os.path.join(self.data, i)).astype(np.float32).T)[None, None, :, :]).cuda() for i in files]
         #processed_sample = torch.Tensor(processed_sample).unsqueeze(0)
         
-        for mel in mel_specs:
-            
-        
+        for i, mel in enumerate(mel_specs):
+            predict = self.model(mel)
+            noisy = True
+            if torch.sigmoid(predict) > 0.5:
+                noisy = False
+                print(f"{files[i]} is Clean")
+            else:
+                print(f"{files[i]} is Noisy")
+                
     @staticmethod
     def _process(sample: np.ndarray) -> np.ndarray:
         '''
@@ -42,14 +50,8 @@ class Inference:
         return processed_sample
         
 def main(_):
-    
     custom_model = Custom_Model()
-    inf = Inference(FLAGS.saved_model, FLAGS.files)
-
-
-
-
-
-
+    inf = Inference(custom_model, FLAGS.saved_model, FLAGS.files).inference()
+    
 if __name__ == "__main__":
     app.run(main)
