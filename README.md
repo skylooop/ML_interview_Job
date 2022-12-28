@@ -15,7 +15,9 @@ This can be done using running prefix (cumprod until ```i``` element) and suffix
 
 
 # Task 2. Classify noisy speech
-**Note. All paths should be absolute.**
+**Note. All paths should be absolute.** \
+**Run only on GPU**
+
 Jupyter notebook can be found in Task2Noise_Speech/notebooks.
 ## Training pipeline
 To run train:
@@ -47,5 +49,5 @@ Since simple NN works OK, i did not try anything more complicated (e.g resnet, U
 |--------
 |[Download from google drive](https://drive.google.com/file/d/1jyVVp9OnPUTnKKp-Y-LlpXX0Qm_fwytI/view?usp=sharing)
 
-## Loss curves (Loss: BinaryCrossEntropy, Metric: Accuracy)
+## Loss curves (Loss: BinaryCrossEntropy, Metric: Accuracy) (More can be found in assets folder)
 ![Step_450_epoch_4](Task2Noise_Speech/assets/Step_450_epoch_4.jpg)
