@@ -46,4 +46,4 @@ To download checkpoint with pretrained weights, trained with custom model and fo
 |[Download from google drive](https://drive.google.com/file/d/1jyVVp9OnPUTnKKp-Y-LlpXX0Qm_fwytI/view?usp=sharing)
 
 ## Loss curves (Loss: BinaryCrossEntropy, Metric: Accuracy)
-![Step_450_epoch_4](https://github.com/skylooop/ML_interview_Job/tree/master/Task2Noise_Speech/assets/Step_450_epoch_4.jpg)
+![Step_450_epoch_4](Task2Noise_Speech/assets/Step_450_epoch_4.jpg)
