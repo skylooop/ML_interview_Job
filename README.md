@@ -7,7 +7,7 @@ $ pip install absl-py
 ```
 python Task1Algorithm/multiplicate.py --input_array=1,2,3,4
 ```
-After ``` --input_array``` flag you need to enter values, separated with commas **without any spaces**.
+After ```--input_array``` flag you need to enter values, separated with commas **without any spaces**.
 
 ## Description of algorithm
 The idea is to solve task in ```O(n)``` space and ```O(1)``` time complexity.
@@ -16,6 +16,7 @@ This can be done using running prefix (cumprod until ```i``` element) and suffix
 
 # Task 2. Classify noisy speech
 **Note. All paths should be absolute.**
+Jupyter notebook can be found in Task2Noise_Speech/notebooks.
 ## Training pipeline
 To run train:
 ```
@@ -40,6 +41,7 @@ Arguments: \
 **--saved_model** - Path to checkpoint with pretrained weights (`.pth`)
 To download checkpoint with pretrained weights, trained with custom model and for 5 epochs, see section below.
 
+Since simple NN works OK, i did not try anything more complicated (e.g resnet, Unet, CoatNet etc.)
 ## Pretrained weights
 |Weights |
 |--------
