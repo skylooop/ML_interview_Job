@@ -37,8 +37,8 @@ python Task2Noise_Speech/detect_inference.py --files=path_to_folder_with_files_t
                                              --saved_model=path_to_pth_weights
 ```
 Arguments: \
-**--files** - Path to folder with mel `npy` files to classify \
-**--saved_model** - Path to checkpoint with pretrained weights (`.pth`)
+**--files** - Path to folder with mel `npy` files to classify. \
+**--saved_model** - Path to checkpoint with pretrained weights (`.pth`).
 To download checkpoint with pretrained weights, trained with custom model and for 5 epochs, see section below.
 
 Since simple NN works OK, i did not try anything more complicated (e.g resnet, Unet, CoatNet etc.)
