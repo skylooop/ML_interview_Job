@@ -18,7 +18,7 @@ This can be done using running prefix (cumprod until ```i``` element) and suffix
 **Note. All paths should be absolute.** \
 **Run only on GPU**
 
-Jupyter notebook can be found in Task2Noise_Speech/notebooks.
+Jupyter notebook can be found in Task2Noise_Speech/notebooks. \
 The task was to classify whether given mel-spectrogram (provided as `.npy` file) contains noise or not. Noise can be anything like drilling, road traffic etc.
 ## Training pipeline
 To run train:
